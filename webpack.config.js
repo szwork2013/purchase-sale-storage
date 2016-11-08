@@ -80,7 +80,7 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             title: 'APP',
-            template: path.resolve(__dirname, 'src/views/index.ejs'),
+            template: path.resolve(__dirname, 'src/layouts/index.ejs'),
             favicon: path.resolve(APP_PATH, 'favicon.ico')
         }),
         new openBrowserWebpackPlugin({
