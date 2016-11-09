@@ -7,3 +7,10 @@
     height: 1rem;
     border:1px solid #ccc;
 }
+
+.bar{
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
