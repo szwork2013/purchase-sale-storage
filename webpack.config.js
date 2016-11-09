@@ -14,7 +14,7 @@ module.exports = {
     debug: true,
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        path.resolve(__dirname, 'src/index.js')
+        path.resolve(APP_PATH, 'index.js')
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -51,12 +51,12 @@ module.exports = {
                     'postcss?parser=postcss-scss'
                 ],
                 include: APP_PATH,
-                exclude: path.resolve(APP_PATH, 'styles'),
+                exclude: path.resolve(APP_PATH, 'public'),
             },
             {
                 test: /\.(css|scss)$/,
                 loader: 'style!css!postcss?parser=postcss-scss',
-                include: path.resolve(APP_PATH, 'styles'),
+                include: path.resolve(APP_PATH, 'public'),
             },
             {
                 test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
@@ -80,8 +80,8 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             title: 'APP',
-            template: path.resolve(__dirname, 'src/layouts/index.ejs'),
-            favicon: path.resolve(APP_PATH, 'favicon.ico')
+            template: path.resolve(APP_PATH, 'public/index.ejs'),
+            favicon: path.resolve(APP_PATH, 'public/favicon.ico')
         }),
         new openBrowserWebpackPlugin({
             url: 'http://localhost:' + port
