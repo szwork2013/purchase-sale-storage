@@ -1,15 +1,40 @@
 import React, { Component } from 'react'
 
-import {Header,Footer} from '../../components'
+import { Header, TabBar, ListView, Item } from '../../components'
 
-export default class Home extends Component{
-    render(){
+class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            goodsList: [
+                { title: 'test', price: 1, img: 'src/public/images/avatar.jpg' },
+                { title: 'test', price: 2, img: 'src/public/images/avatar.jpg' },
+                { title: 'test', price: 3, img: 'src/public/images/avatar.jpg' }
+            ]
+        }
+    }
+    render() {
+        const {goodsList} = this.state;
         return (
             <div>
-                <Header />
-                
-                <Footer />
+                <ListView>
+                    {
+                        goodsList.map((item, index) => {
+                            return (
+                                <Item
+                                    key={index}
+                                    img={item.img}
+                                    title={item.title}
+                                    price={item.price}
+                                    />
+                            )
+                        })
+                    }
+                </ListView>
+                <TabBar />
             </div>
         )
     }
 }
+
+export default Home

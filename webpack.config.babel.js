@@ -1,14 +1,16 @@
-var path = require('path')
-var webpack = require('webpack')
+import path from 'path'
+import webpack from 'webpack'
 
-var htmlWebpackPlugin = require('html-webpack-plugin')
-var openBrowserWebpackPlugin = require('open-browser-webpack-plugin')
+import htmlWebpackPlugin from 'html-webpack-plugin'
+import openBrowserWebpackPlugin from 'open-browser-webpack-plugin'
 
-var ROOT_PATH = path.resolve(__dirname)
-var APP_PATH = path.resolve(ROOT_PATH, 'src')
-var BUILD_PATH = path.resolve(ROOT_PATH, 'dist')
+const ROOT_PATH = path.resolve(__dirname)
+const APP_PATH = path.resolve(ROOT_PATH, 'src')
+const BUILD_PATH = path.resolve(ROOT_PATH, 'dist')
 
-const port = 8080;
+import config from './config/config.js'
+
+const port = config.port
 
 module.exports = {
     debug: true,
@@ -17,7 +19,7 @@ module.exports = {
         path.resolve(APP_PATH, 'index.js')
     ],
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: BUILD_PATH,
         filename: 'bundle.js'
     },
 
@@ -30,7 +32,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js', '.jsx', '.json']
+        extensions: ['', '.web.js', '.js', '.jsx', '.json']
     },
 
     module: {
@@ -69,7 +71,7 @@ module.exports = {
         ]
     },
 
-    postcss: function () {
+    postcss: function() {
         return [
             require('precss'),
             require('autoprefixer'),

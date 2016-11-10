@@ -1,3 +1,4 @@
-export { default as Footer } from './Footer'
+export { default as TabBar } from './TabBar'
 export { default as Header } from './Header'
-export { default as List } from './List'
+export { default as ListView } from './ListView'
+export { default as Item } from './Item'

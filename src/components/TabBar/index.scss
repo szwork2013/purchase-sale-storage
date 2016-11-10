@@ -4,13 +4,7 @@
     position: fixed;
     z-index: 50;
     bottom: 0;
-    height: 1rem;
     border:1px solid #ccc;
+    min-height: 1rem;
 }
 
-.bar{
-    flex: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
