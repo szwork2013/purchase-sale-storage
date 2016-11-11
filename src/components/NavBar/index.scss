@@ -1,0 +1,12 @@
+.root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:.2rem .3rem;
+    font-size: .34rem;
+    background: #fff;
+    .title{
+        flex: auto;
+        text-align: center;
+    }
+}

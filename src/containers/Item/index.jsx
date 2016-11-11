@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 
-export default class Header extends Component {
+class Item extends Component {
     render() {
-        const {children} = this.props;
+        const {children} = this.props
         return (
-            <div className={styles.root}>
+            <div className={style.root}>
                 {children}
             </div>
-        )
+        );
     }
-} 
+}
+
+export default Item;

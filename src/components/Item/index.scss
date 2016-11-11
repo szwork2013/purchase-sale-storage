@@ -2,38 +2,58 @@
     display: flex;
     width: 100%;
     padding: .2rem .3rem;
-    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
     &:active{
         background: #eee;
     }
-}
+    
+    .itemImg{
+        display: flex;
+        width:1.2rem;
+        height: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        margin-right: .2rem;
+    }
 
-.left{
-    display: flex;
-    width:1.2rem;
-    align-items: center;
-    justify-content: center;
-}
+    .itemInfo{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 
-.right{
-    flex: 4;
-    display: flex;
-    flex-direction: column;
-    padding-left: .2rem;
-}
+    .itemPay{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.thumb{
-    width:1.4rem;
-}
+    .title{
+        font-size: .34rem;
+    }
 
-.caption{
-    font-size: .34rem;
-}
+    .sku{
+        font-size: .24rem;
+        color: #999;        
+    }
 
-.price{
-    font-size: .3rem;
-    color:#ff4567;
-    &::before{
-        content:"￥"
+    .price{
+        font-size: .3rem;
+        color:#ff4567;
+        &:before{
+            content:"￥"
+        }
+    }
+
+    .nums{
+        font-size: .3rem;
+        color: #999;
+        &::before{
+            content: "×"
+        }
     }
 }

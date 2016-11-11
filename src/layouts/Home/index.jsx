@@ -7,9 +7,9 @@ class Home extends Component {
         super(props)
         this.state = {
             goodsList: [
-                { title: 'test', price: 1, img: '/public/images/avatar.jpg' },
-                { title: 'test', price: 2, img: 'src/public/images/avatar.jpg' },
-                { title: 'test', price: 3, img: 'src/public/images/avatar.jpg' }
+                { title: 'test', price: 1, imgUrl: '/public/images/avatar.jpg' },
+                { title: 'test', price: 2, imgUrl: 'src/public/images/avatar.jpg' },
+                { title: 'test', price: 3, imgUrl: 'src/public/images/avatar.jpg' }
             ]
         }
     }
@@ -24,7 +24,7 @@ class Home extends Component {
                                 <Item
                                     key={index}
                                     url={'p/' + index}
-                                    img={item.img}
+                                    imgUrl={item.imgUrl}
                                     title={item.title}
                                     price={item.price}
                                     />
