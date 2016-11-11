@@ -3,17 +3,20 @@ import styles from './index.scss'
 
 import { Link } from 'react-router'
 
+import Icon from '../../Icon'
+
 class Bar extends Component {
     render() {
-        const { pathUrl, active, icoName, linkName, children } = this.props;
+        const { pathUrl, active, icoName, linkName, children,...rest } = this.props;
         return (
             <Link
+                {...rest}
                 to={pathUrl}
                 activeClassName={active}
                 className={styles.root}
                 >
-                <i className={icoName + ' ' + styles.ico} />
-                <span className={styles.text}>{linkName || children}</span>
+                <Icon icoName={icoName} />
+                {linkName ? <span className={styles.text}>{linkName || children}</span> : null}
             </Link>
         )
     }

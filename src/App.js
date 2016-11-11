@@ -2,10 +2,11 @@
 import React, { Component } from 'react'
 import { Router } from 'react-router'
 
-import routes from  './routes'
+import routes from './routes'
 
 import './public/styles/normalize.scss'
 import './public/styles/app.scss'
+import './public/fonts/iconfont.css'
 
 export default class App extends Component {
     render() {

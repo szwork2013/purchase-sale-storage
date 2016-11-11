@@ -9,22 +9,22 @@ export default class TabBar extends Component {
             <div className={styles.root}>
                 <Bar
                     pathUrl="/"
-                    icoName={"i-zhuye42un"}
-                    active={styles.navOne}
+                    icoName={"shouye"}
+                    active={styles.active}
                     linkName="首页"
                     onlyActiveOnIndex
                     />
                 <Bar
                     pathUrl="/order"
-                    icoName={"i-youhui42un"}
-                    active={styles.navThree}
+                    icoName={"wodedingdan"}
+                    active={styles.active}
                     linkName="订单"
                     />
 
                 <Bar
-                    pathUrl="/user"
-                    icoName={"i-wode42un"}
-                    active={styles.navFive}
+                    pathUrl="/account"
+                    icoName={"wodejuhuasuan"}
+                    active={styles.active}
                     linkName="我的"
                     />
             </div>

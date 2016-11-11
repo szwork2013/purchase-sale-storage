@@ -3,23 +3,16 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     line-height: 1;
-    color: #666;
     &:hover {
         color: #1abc9c;
     }
 }
 
-.ico {
-    font-size: 0.42rem;
-    display: block;
-    margin-bottom: 0.1rem;
-}
-
 .text {
     display: block;
     line-height: 1;
-    font-size: .24rem;
+    font-size: .22rem;
 }

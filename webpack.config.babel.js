@@ -8,7 +8,7 @@ const ROOT_PATH = path.resolve(__dirname)
 const APP_PATH = path.resolve(ROOT_PATH, 'src')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist')
 
-import config from './config/config.js'
+import config from './config/config.json'
 
 const port = config.port
 
@@ -71,7 +71,7 @@ module.exports = {
         ]
     },
 
-    postcss: function() {
+    postcss: function () {
         return [
             require('precss'),
             require('autoprefixer'),
