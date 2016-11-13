@@ -3,7 +3,7 @@ import styles from './index.scss'
 
 import { Link } from 'react-router'
 
-import { Icon } from '../../'
+import { Icon } from '../../../'
 
 class Bar extends Component {
     render() {

@@ -16,6 +16,8 @@ module.exports = {
     debug: true,
     devtool: 'cheap-module-eval-source-map',
     entry: [
+        `webpack-dev-server/client?http://0.0.0.0:${port}`,
+        'webpack/hot/only-dev-server',
         path.resolve(APP_PATH, 'index.js')
     ],
     output: {
@@ -33,43 +35,34 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.web.js', '.js', '.jsx', '.json']
+        extensions: ['', '.js', '.jsx', '.json']
     },
 
     module: {
-        loaders: [
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'babel',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            },
-            {
-                test: /\.(css|scss)$/,
-                loaders: [
-                    'style',
-                    'css?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
-                    'postcss?parser=postcss-scss'
-                ],
-                include: APP_PATH,
-                exclude: path.resolve(APP_PATH, 'public'),
-            },
-            {
-                test: /\.(css|scss)$/,
-                loader: 'style!css!postcss?parser=postcss-scss',
-                include: path.resolve(APP_PATH, 'public'),
-            },
-            {
-                test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-                loader: 'url?limit=10000'
-            },
-            {
-                test: /\.(gif|jpg|png|ico)$/,
-                loader: 'url?limit=20000'
-            }
-        ]
+        loaders: [{
+            test: /\.(js|jsx)$/,
+            loader: 'babel',
+            exclude: /node_modules/
+        }, {
+            test: /\.(css|scss)$/,
+            loaders: [
+                'style',
+                'css?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
+                'postcss?parser=postcss-scss'
+            ],
+            include: APP_PATH,
+            exclude: path.resolve(APP_PATH, 'public'),
+        }, {
+            test: /\.(css|scss)$/,
+            loader: 'style!css!postcss?parser=postcss-scss',
+            include: path.resolve(APP_PATH, 'public'),
+        }, {
+            test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
+            loader: 'url?limit=10000'
+        }, {
+            test: /\.(gif|jpg|png|ico)$/,
+            loader: 'url?limit=20000'
+        }]
     },
 
     postcss: function () {
@@ -87,7 +80,7 @@ module.exports = {
             favicon: path.resolve(APP_PATH, 'public/favicon.ico')
         }),
         new openBrowserWebpackPlugin({
-            url: 'http://localhost:' + port
+            url: `http://localhost:${port}`
         })
     ]
 }

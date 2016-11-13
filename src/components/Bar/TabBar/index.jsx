@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 
-import { Footer } from '../../containers'
+import { Footer } from '../../../containers'
+
 import Tab from './Tab'
 
 export default class TabBar extends Component {

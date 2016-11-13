@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './index.scss'
 
-import { Icon } from '../'
+import { Icon } from '../../'
 
 class NavBar extends Component {
     render() {
