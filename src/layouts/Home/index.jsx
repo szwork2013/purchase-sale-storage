@@ -17,7 +17,7 @@ class Home extends Component {
         const {goodsList} = this.state;
         return (
             <div>
-                <ListView>
+                <ListView title="最近热销">
                     {
                         goodsList.map((item, index) => {
                             return (

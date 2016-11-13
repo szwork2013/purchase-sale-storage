@@ -3,9 +3,9 @@ import styles from './index.scss'
 
 export default class Header extends Component {
     render() {
-        const {children} = this.props;
+        const {children, className} = this.props;
         return (
-            <div className={styles.root}>
+            <div className={`${styles.root} ${className}`}>
                 {children}
             </div>
         )

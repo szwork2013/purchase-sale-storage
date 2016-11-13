@@ -3,18 +3,20 @@ import styles from './index.scss'
 
 import { Link } from 'react-router'
 
+// 图片加载失败时的默认图片
 const imageErr = (e) => {
     e.target.src = 'src/public/images/404.jpg'
 }
 
 class Item extends Component {
-
     render() {
         const {price, title, imgUrl, url} = this.props;
         return (
             <Link to={url} className={styles.root}>
 
-                <img className={styles.itemImg} src={imgUrl} onError={imageErr} />
+                <div className={styles.itemImg}>
+                    <img src={imgUrl} onError={imageErr} />
+                </div>
 
                 <div className={styles.itemInfo}>
                     <span className={styles.title}>{title || '商品标题'}</span>
@@ -31,7 +33,9 @@ class OrderItem extends Component {
         return (
             <Link to={url} className={styles.root} >
 
-                <img className={styles.itemImg} src={imgUrl} onError={imageErr} />
+                <div className={styles.itemImg}>
+                    <img src={imgUrl} onError={imageErr} />
+                </div>
 
                 <div className={styles.itemInfo}>
                     <h2 className={styles.title}>{title}</h2>
@@ -46,4 +50,5 @@ class OrderItem extends Component {
     }
 }
 
+export default { Item }
 export { Item, OrderItem }

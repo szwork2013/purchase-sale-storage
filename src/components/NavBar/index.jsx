@@ -5,12 +5,19 @@ import { Icon } from '../'
 
 class NavBar extends Component {
     render() {
+        const {title} = this.props
         return (
             <div className={styles.root}>
-                <Icon icoName={'xiangzuojiantou'} />
-                <h1 onClick={(e) => console.log(e)} className={styles.title}>
-                    标题
-                </h1>
+                <div
+                    onClick={() => history.go(-1)}
+                    className={styles.left}
+                    >
+                    <Icon icoName={'xiangzuojiantou'} />
+                </div>
+                <div className={styles.title}>
+                    <h1>{title}</h1>
+                </div>
+                <div className={styles.right}></div>
             </div>
         );
     }

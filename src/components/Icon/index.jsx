@@ -3,9 +3,9 @@ import styles from './index.scss'
 
 class Icon extends Component {
     render() {
-        const {icoName} = this.props;
+        const {icoName, className} = this.props;
         return (
-            <i className={`iconfont icon-${icoName} `+styles.root} />
+            <i className={`iconfont icon-${icoName}`} />
         )
     }
 }

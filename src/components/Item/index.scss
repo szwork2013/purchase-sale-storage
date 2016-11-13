@@ -1,58 +1,54 @@
-.root{
+.root {
     display: flex;
     width: 100%;
-    padding: .2rem .3rem;
-    border-bottom: 1px solid #ccc;
     background: #fff;
-    &:active{
+    height: 1.6rem;
+    &:active {
         background: #eee;
     }
-    
-    .itemImg{
+    .itemImg {
+        width: 1.4rem;
         display: flex;
-        width:1.2rem;
-        height: 1.2rem;
         align-items: center;
         justify-content: center;
-        margin-right: .2rem;
+        padding: .1rem;
+        img {
+            width: 100%;
+        }
     }
-
-    .itemInfo{
+    .itemInfo {
         flex: 3;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        border-bottom: 1px solid #ccc;
+        padding: .1rem;
     }
-
-    .itemPay{
+    .itemPay {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
-    .title{
+    .title {
         font-size: .34rem;
     }
-
-    .sku{
+    .sku {
         font-size: .24rem;
-        color: #999;        
+        color: #999;
     }
-
-    .price{
+    .price {
         font-size: .3rem;
-        color:#ff4567;
-        &:before{
-            content:"￥"
+        color: #ff4567;
+        &:before {
+            content: "￥"
         }
     }
-
-    .nums{
+    .nums {
         font-size: .3rem;
         color: #999;
-        &::before{
+        &::before {
             content: "×"
         }
     }

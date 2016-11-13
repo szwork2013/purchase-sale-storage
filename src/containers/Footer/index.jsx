@@ -3,9 +3,9 @@ import styles from './index.scss'
 
 class Footer extends Component {
     render() {
-        const { children } = this.props;
+        const { children, className } = this.props;
         return (
-            <div>
+            <div className={`${styles.root} ${className}`}>
                 {children}
             </div>
         );
