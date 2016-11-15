@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
+import { NavBar } from 'components'
+import { Footer } from 'containers'
 class Detail extends Component {
     render() {
         return (
             <div>
-                OrderDetail
+                {console.log(this.props)}
+                <NavBar />
+                OrdertDetail
             </div>
         );
     }

@@ -1,15 +1,16 @@
 import path from 'path'
 import webpack from 'webpack'
 
+import config from './config/config.json'
 import htmlWebpackPlugin from 'html-webpack-plugin'
 import openBrowserWebpackPlugin from 'open-browser-webpack-plugin'
+import precss from 'precss'
+import autoprefixer from 'autoprefixer'
+import rucksackCss from 'rucksack-css'
 
 const ROOT_PATH = path.resolve(__dirname)
 const APP_PATH = path.resolve(ROOT_PATH, 'src')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist')
-
-import config from './config/config.json'
-
 const port = config.port
 
 module.exports = {
@@ -35,9 +36,23 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js', '.jsx', '.json']
+        extensions: ['', '.js', '.jsx', '.json'],
+        alias: {
+            containers: path.resolve(APP_PATH, './containers'),
+            components: path.resolve(APP_PATH, './components'),
+        }
     },
-
+    plugins: [
+        new htmlWebpackPlugin({
+            title: 'APP',
+            template: path.resolve(APP_PATH, 'public/index.ejs'),
+            favicon: path.resolve(APP_PATH, 'public/favicon.ico'),
+            hash:true
+        }),
+        new openBrowserWebpackPlugin({
+            url: `http://localhost:${port}`
+        })
+    ],
     module: {
         loaders: [{
             test: /\.(js|jsx)$/,
@@ -64,23 +79,5 @@ module.exports = {
             loader: 'url?limit=20000'
         }]
     },
-
-    postcss: function () {
-        return [
-            require('precss'),
-            require('autoprefixer'),
-            require('rucksack-css')
-        ]
-    },
-
-    plugins: [
-        new htmlWebpackPlugin({
-            title: 'APP',
-            template: path.resolve(APP_PATH, 'public/index.ejs'),
-            favicon: path.resolve(APP_PATH, 'public/favicon.ico')
-        }),
-        new openBrowserWebpackPlugin({
-            url: `http://localhost:${port}`
-        })
-    ]
+    postcss: () => [precss, autoprefixer, rucksackCss]
 }

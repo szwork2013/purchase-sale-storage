@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { TabBar, OrderItem } from '../../components'
+import { TabBar, OrderItem } from 'components'
 
 class Order extends Component {
     constructor(props) {
@@ -27,6 +27,7 @@ class Order extends Component {
                             <OrderItem
                                 key={index}
                                 title={item.name}
+                                url={`o/${index}`}
                                 imgUrl={item.url}
                                 price={item.price}
                                 sku={item.sku}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 
-import Item from '../Item'
+import Item from 'components'
 class List extends Component {
     render() {
         const {children, title} = this.props

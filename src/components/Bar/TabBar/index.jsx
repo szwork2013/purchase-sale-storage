@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 
-import { Footer } from '../../../containers'
+import { Footer } from 'containers'
 
 import Tab from './Tab'
 
@@ -15,6 +15,12 @@ export default class TabBar extends Component {
                     active={styles.active}
                     linkName="首页"
                     onlyActiveOnIndex
+                    />
+                <Tab
+                    pathUrl="/cart"
+                    icoName={"gouwuche"}
+                    active={styles.active}
+                    linkName="购物车"
                     />
                 <Tab
                     pathUrl="/order"
