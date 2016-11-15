@@ -40,6 +40,7 @@ module.exports = {
         alias: {
             containers: path.resolve(APP_PATH, './containers'),
             components: path.resolve(APP_PATH, './components'),
+            js: path.resolve(APP_PATH, './public/js')
         }
     },
     plugins: [
@@ -47,7 +48,7 @@ module.exports = {
             title: 'APP',
             template: path.resolve(APP_PATH, 'public/index.ejs'),
             favicon: path.resolve(APP_PATH, 'public/favicon.ico'),
-            hash:true
+            hash: true
         }),
         new openBrowserWebpackPlugin({
             url: `http://localhost:${port}`

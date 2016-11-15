@@ -1,3 +1,22 @@
-.emp{
-    
+.emp {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .icon {
+        text-align: center;
+        width: 100%;
+        font-size: 2rem;
+        color: #ccc;
+    }
+    a {
+        padding: .3rem .5rem;
+        border: 1px solid #ccc;
+    }
 }
