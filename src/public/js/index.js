@@ -1,1 +1,1 @@
-export {default as Util} from './Util.js'
+export {isEmptyobject} from './Util'

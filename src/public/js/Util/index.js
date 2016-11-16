@@ -1,0 +1,1 @@
+export {default as isEmptyObject} from './isEmptyObject.js'
