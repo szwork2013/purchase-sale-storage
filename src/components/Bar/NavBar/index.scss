@@ -1,20 +1,21 @@
 .root {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  height: .88rem;
+  font-size:.3rem;
+  .title {
+    flex: 8;
+  }
+  .left,
+  .right {
+    flex: 1;
+  }
+  .title,
+  .left,
+  .right {
     display: flex;
-    width: 100%;
-    background: #fff;
-    height: .88rem;
-    .title {
-        flex: 8;
-    }
-    .left,
-    .right {
-        flex: 1;
-    }
-    .title,
-    .left,
-    .right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    align-items: center;
+    justify-content: center;
+  }
 }

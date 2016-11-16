@@ -1,55 +1,111 @@
 .root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  height: 1.6rem;
+  &:active {
+    background: #eee;
+  }
+  .itemImg {
+    width: 1.4rem;
     display: flex;
-    width: 100%;
-    background: #fff;
-    height: 1.6rem;
-    &:active {
-        background: #eee;
+    align-items: center;
+    justify-content: center;
+    padding: .1rem;
+    img {
+      width: 100%;
     }
-    .itemImg {
-        width: 1.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: .1rem;
-        img {
-            width: 100%;
-        }
+  }
+  .itemInfo {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    padding: .1rem;
+  }
+  .itemPay {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  .title {
+    font-size: .34rem;
+  }
+  .sku {
+    font-size: .24rem;
+    color: #999;
+  }
+  .price {
+    font-size: .3rem;
+    color: #ff4567;
+    &:before {
+      content: "￥"
     }
-    .itemInfo {
-        flex: 3;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border-bottom: 1px solid #ccc;
-        padding: .1rem;
+  }
+  .nums {
+    font-size: .3rem;
+    color: #999;
+    &::before {
+      content: "×"
     }
-    .itemPay {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  }
+}
+
+.cartItemRoot {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  .choose {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    input[type=checkbox]{
+      width:.3rem;
+      height: .3rem;
     }
-    .title {
-        font-size: .34rem;
+  }
+  .itemImg {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
     }
-    .sku {
-        font-size: .24rem;
-        color: #999;
+  }
+  .itemInfo {
+    flex: 5;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
+    padding: .2rem;
+    .name {
+      font-size: .38rem;
+      line-height: 1.5;
+      color: #666;
     }
     .price {
-        font-size: .3rem;
-        color: #ff4567;
-        &:before {
-            content: "￥"
-        }
+      font-size: .28rem;
+      line-height: 1.5;
+      color: #999
     }
-    .nums {
-        font-size: .3rem;
-        color: #999;
-        &::before {
-            content: "×"
-        }
+    .num {
+      display: flex;
+      justify-content: space-between;
+      .delete {
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+        justify-content: center;
+        color: #999;;
+      }
     }
+  }
 }

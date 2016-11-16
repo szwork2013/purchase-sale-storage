@@ -23,7 +23,7 @@ class Home extends Component {
                             return (
                                 <Item
                                     key={index}
-                                    url={`product/${index}`}
+                                    url={`product/view?product_id=${index}`}
                                     imgUrl={item.imgUrl}
                                     title={item.title}
                                     price={item.price}

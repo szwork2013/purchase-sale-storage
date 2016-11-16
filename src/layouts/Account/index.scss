@@ -1,5 +1,28 @@
+@import "../../public/styles/app.scss";
+
+$avatar-size: 1.5rem;
+$avatar-position: .75rem;
+
 .user {
-  background: #fff;
+  background: $main-color;
   display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: column;
+  padding: .5rem 0 1rem 0;
+  margin-bottom: 1rem;
+  h2 {
+    font-size: .5rem;
+    color: #fff;
+  }
+  img {
+    position: absolute;
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 50%;
+    bottom: -$avatar-position;
+    border: .04rem solid #fff;
+  }
 
 }

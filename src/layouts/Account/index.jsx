@@ -6,7 +6,7 @@ class Account extends Component {
     render() {
         return (
             <div>
-                <User />
+                <User {...this.props} />
                 <TabBar />
             </div>
         );

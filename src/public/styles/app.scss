@@ -383,6 +383,11 @@ img {
   transform: translate(-50%, -50%);
 }
 
+// 页面全屏
+.absolute-full{
+    position: absolute 0;
+}
+
 // flex 参考指南。http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 // 任何一个容器都可以指定 flex 布局
 // .box-example { display: flex }

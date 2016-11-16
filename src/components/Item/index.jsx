@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import styles from './index.scss'
+import React, {Component} from 'react';
+import {Link} from 'react-router'
 
-import { Link } from 'react-router'
+import {Icon,Counter} from 'components'
+import styles from './index.scss'
 
 // 图片加载失败时的默认图片
 const imageErr = (e) => {
@@ -15,7 +16,7 @@ class Item extends Component {
             <Link to={url} className={styles.root}>
 
                 <div className={styles.itemImg}>
-                    <img src={imgUrl} onError={imageErr} />
+                    <img src={imgUrl} onError={imageErr}/>
                 </div>
 
                 <div className={styles.itemInfo}>
@@ -29,12 +30,12 @@ class Item extends Component {
 
 class OrderItem extends Component {
     render() {
-        const {url, imgUrl, title, sku, price, nums } = this.props
+        const {url, imgUrl, title, sku, price, nums} = this.props
         return (
-            <Link to={url} className={styles.root} >
+            <Link to={url} className={styles.root}>
 
                 <div className={styles.itemImg}>
-                    <img src={imgUrl} onError={imageErr} />
+                    <img src={imgUrl} onError={imageErr}/>
                 </div>
 
                 <div className={styles.itemInfo}>
@@ -50,5 +51,35 @@ class OrderItem extends Component {
     }
 }
 
-export default { Item }
-export { Item, OrderItem }
+
+class CartItem extends Component {
+    render() {
+        return (
+            <div className={styles.cartItemRoot}>
+                <div className={styles.choose}>
+                    <input type="checkbox"/>
+                </div>
+                <Link to="/product/view" className={styles.itemImg}>
+                    <img src="/src/public/images/404.jpg" alt=""/>
+                </Link>
+                <div className={styles.itemInfo}>
+                    <p className={styles.name}>
+                        嘉实多
+                    </p>
+                    <p className={styles.price}>
+                        售价：799元 合计：799元
+                    </p>
+                    <div className={styles.num}>
+                        <Counter />
+                        <Icon icoName="lajixiang" className={styles.delete}/>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+
+export default {Item}
+export {Item, OrderItem, CartItem}

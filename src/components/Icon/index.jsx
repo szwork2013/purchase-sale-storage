@@ -5,7 +5,7 @@ class Icon extends Component {
     render() {
         const {icoName, className} = this.props;
         return (
-            <i className={`iconfont icon-${icoName} ${className?className:""}`} />
+            <i className={`${styles.iconfont} icon-${icoName} ${className?className:""}`} />
         )
     }
 }

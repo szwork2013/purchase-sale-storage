@@ -27,7 +27,7 @@ class Order extends Component {
                             <OrderItem
                                 key={index}
                                 title={item.name}
-                                url={`o/${index}`}
+                                url={`order/view?order_id=${index}`}
                                 imgUrl={item.url}
                                 price={item.price}
                                 sku={item.sku}

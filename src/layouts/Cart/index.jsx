@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
-import {NavBar, TabBar, Icon} from 'components'
+import {NavBar, TabBar, Icon,CartItem} from 'components'
 import  {Footer} from 'containers'
 import {isEmptyObject} from '../../public/js/Util/'
 import styles from './index.scss'
@@ -10,9 +10,7 @@ class Cart extends Component {
         super(props)
         this.state = {
             model: {
-                cart: [
-                    {a: 1}
-                ]
+                cart:[{a:1}]
             }
         }
     }
@@ -30,6 +28,7 @@ class Cart extends Component {
             return (
                 <div>
                     <NavBar title="购物车"/>
+                    <CartItem></CartItem>
                     <CommitBar {...this.state} />
                 </div>
             )

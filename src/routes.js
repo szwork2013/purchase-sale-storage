@@ -9,14 +9,14 @@ export default (
         <IndexRoute component={Home} />
         <Route path="product" >
             <IndexRoute component={Product} />
-            <Route path=":id" component={ProductDetail} />
+            <Route path="view" component={ProductDetail} />
         </Route>
         <Route path="cart">
             <IndexRoute component={Cart} />
         </Route>
         <Route path="order">
             <IndexRoute component={Order} />
-            <Route path=":id" component={OrderDetail} />
+            <Route path="view" component={OrderDetail} />
         </Route>
         <Route path="account" component={Account} />
         <Route path="*" component={NotFoundPage} />
