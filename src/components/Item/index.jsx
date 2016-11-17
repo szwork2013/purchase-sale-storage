@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router'
 
-import {Icon,Counter} from 'components'
+import {Icon,Stepper} from 'components'
 import styles from './index.scss'
-
+import errImg from '../../public/images/404.jpg'
 // 图片加载失败时的默认图片
-const imageErr = (e) => {
-    e.target.src = 'src/public/images/404.jpg'
+const imageErr =(e)=>{
+    e.target.src == errImg?null:e.target.src = errImg
 }
 
 class Item extends Component {
@@ -60,7 +60,7 @@ class CartItem extends Component {
                     <input type="checkbox"/>
                 </div>
                 <Link to="/product/view" className={styles.itemImg}>
-                    <img src="/src/public/images/404.jpg" alt=""/>
+                    <img src="/src/public/images/404.jpg" alt="" onError={imageErr}/>
                 </Link>
                 <div className={styles.itemInfo}>
                     <p className={styles.name}>
@@ -70,7 +70,7 @@ class CartItem extends Component {
                         售价：799元 合计：799元
                     </p>
                     <div className={styles.num}>
-                        <Counter />
+                        <Stepper />
                         <Icon icoName="lajixiang" className={styles.delete}/>
                     </div>
                 </div>

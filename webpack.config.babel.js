@@ -1,5 +1,4 @@
 import path from 'path'
-import webpack from 'webpack'
 
 import config from './config/config.json'
 import htmlWebpackPlugin from 'html-webpack-plugin'
@@ -32,7 +31,13 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
-        port: port
+        port: port,
+        // proxy:{
+        //     '/api/*':{
+        //         target:`http://localhost:${port}`,
+        //         secure: false
+        //     }
+        // }
     },
 
     resolve: {

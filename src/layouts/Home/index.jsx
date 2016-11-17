@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-
 import { Header, TabBar, ListView, Item } from 'components'
+
+import product from '../../../mock/product'
 
 class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            goodsList: [
-                { title: 'test', price: 1, imgUrl: 'src/public/images/404.jpg' },
-                { title: 'test', price: 2, imgUrl: 'src/public/images/avatar.jpg' },
-                { title: 'test', price: 3, imgUrl: 'src/public/images/avatar.jpg' }
-            ]
+            goodsList: Product.data.list
         }
     }
     render() {
@@ -24,7 +21,7 @@ class Home extends Component {
                                 <Item
                                     key={index}
                                     url={`product/view?product_id=${index}`}
-                                    imgUrl={item.imgUrl}
+                                    imgUrl={item.img_url}
                                     title={item.title}
                                     price={item.price}
                                     />
