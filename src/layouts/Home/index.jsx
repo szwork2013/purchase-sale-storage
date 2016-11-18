@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { Header, TabBar, ListView, Item } from 'components'
 
-import product from '../../../mock/product'
+// import product from '../../../mock/product'
 
 class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            goodsList: Product.data.list
+            goodsList: [
+
+            ]
         }
     }
     render() {

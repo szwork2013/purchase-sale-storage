@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot",
-    "build": "webpack",
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/luwenjiechn/purchase-sale-storage.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "luwenjiechn",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/luwenjiechn/purchase-sale-storage/issues"
