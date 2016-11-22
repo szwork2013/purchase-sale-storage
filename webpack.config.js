@@ -1,5 +1,5 @@
 const webpack = require('atool-build/lib/webpack');
-
+const px2rem = require('postcss-px2rem')
 module.exports = function (webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
@@ -40,6 +40,8 @@ module.exports = function (webpackConfig, env) {
       loader.test = /\.css$/;
     }
   });
+
+  webpackConfig.postcss.push(px2rem({remUnit:75}))
 
   return webpackConfig;
 };
