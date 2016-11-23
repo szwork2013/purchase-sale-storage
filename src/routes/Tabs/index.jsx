@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Button, TabBar } from 'antd-mobile';
 import styles from './index.less'
 
-class Example extends Component {
+class Tabs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,4 +85,4 @@ class Example extends Component {
   }
 }
 
-export default connect()(Example);
+export default connect()(Tabs);

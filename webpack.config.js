@@ -41,7 +41,12 @@ module.exports = function (webpackConfig, env) {
     }
   });
 
-  webpackConfig.postcss.push(px2rem({remUnit:75}))
-
+  webpackConfig.postcss.push(px2rem({remUnit:95}))
+  // webpackConfig.plugins.push(
+  //   new webpack.DefinePlugin({
+  //     modulesDirectories: ['node_modules', path.join(__dirname, './node_modules')],
+  //     extensions: ['', '.js', '.jsx'],
+  //   })
+  // )
   return webpackConfig;
 };
